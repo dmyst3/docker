@@ -2,7 +2,7 @@ version: '3'
 services:
   api1:
     image: "abacchus/ce-3.8.1"
-    build: .
+    build: ./mule
     #ports:
     # - "8081:8081"
     volumes:
@@ -11,7 +11,7 @@ services:
      - dev.properties
   api2:
     image: "abacchus/ce-3.8.1"
-    build: .
+    build: ./mule
     #ports:
      #- "8082:8081"
     volumes:
