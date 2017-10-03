@@ -1,0 +1,27 @@
+version: '3'
+services:
+  api1:
+    image: "abacchus/ce-3.8.1"
+    build: .
+    #ports:
+    # - "8081:8081"
+    volumes:
+     - G:/docker/demo1:/root/mule/apps
+    env_file:
+     - dev.properties
+  api2:
+    image: "abacchus/ce-3.8.1"
+    build: .
+    #ports:
+     #- "8082:8081"
+    volumes:
+     - G:/docker/demo1:/root/mule/apps
+    env_file:
+     - dev.properties
+  nginx:
+    image: "nginx:mule"
+    build: ./nginx
+    volumes:
+     - G:/docker/nginx:/etc/nginx/conf.d
+    ports:
+     - "80:89"
