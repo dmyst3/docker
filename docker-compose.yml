@@ -5,6 +5,8 @@ services:
     build: ./mule
     ports:
      - "8081:8081"
+    networks:
+     - overlay
     volumes:
      - /mule-apps/apps/3.8.1/app:/root/mule/apps
      - /mule-apps/apps/3.8.1/logs:/root/mule/logs
@@ -15,6 +17,8 @@ services:
     build: ./mule
     ports:
      - "8082:8081"
+    networks:
+     - overlay
     volumes:
      - /mule-apps/apps/3.8.1/app:/root/mule/apps
      - /mule-apps/apps/3.8.1/logs:/root/mule/logs
@@ -27,3 +31,5 @@ services:
      - /mule-apps/apps/3.8.1/nginx:/etc/nginx/conf.d
     ports:
      - "89:80"
+ networks:
+    overlay:
