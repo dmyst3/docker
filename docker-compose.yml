@@ -1,35 +1,22 @@
 version: '3'
 services:
-  api1:
-    image: "abacchus/ce-3.8.1"
+  api:
+    image: "ce-3.8.1:hf-eai-dev-demo"
     build: ./mule
-    ports:
-     - "8081:8081"
     networks:
-     - overlay
+     - my_network
     volumes:
-     - /mule-apps/apps/3.8.1/app:/root/mule/apps
      - /mule-apps/apps/3.8.1/logs:/root/mule/logs
     env_file:
      - dev.properties
-  api2:
-    image: "abacchus/ce-3.8.1"
-    build: ./mule
-    ports:
-     - "8082:8081"
-    networks:
-     - overlay
-    volumes:
-     - /mule-apps/apps/3.8.1/app:/root/mule/apps
-     - /mule-apps/apps/3.8.1/logs:/root/mule/logs
-    env_file:
-     - dev.properties
+     
   nginx:
     image: "nginx:mule"
     build: ./nginx
-    volumes:
-     - /mule-apps/apps/3.8.1/nginx:/etc/nginx/conf.d
+    networks:
+     - my_network
     ports:
      - "89:80"
- networks:
-    overlay:
+
+networks:
+  my_network:
