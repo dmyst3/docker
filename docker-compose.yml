@@ -1,15 +1,27 @@
 version: '3'
 services:
-  api:
-    image: "ce-3.8.1:hf-eai-dev-demo"
+  api1:
+    image: "abacchus/ce-3.8.1"
     build: ./mule
     networks:
      - my_network
     volumes:
      - /mule-apps/apps/3.8.1/logs:/root/mule/logs
+     - /mule-apps/apps/3.8.1/app:/root/mule/apps
     env_file:
      - dev.properties
-     
+    
+  api2:
+    image: "abacchus/ce-3.8.1"
+    build: ./mule
+    networks:
+     - my_network
+    volumes:
+     - /mule-apps/apps/3.8.1/logs:/root/mule/logs
+     - /mule-apps/apps/3.8.1/app:/root/mule/apps
+    env_file:
+     - dev.properties
+
   nginx:
     image: "nginx:mule"
     build: ./nginx
