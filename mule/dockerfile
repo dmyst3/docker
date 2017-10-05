@@ -1,5 +1,5 @@
 FROM abacchus/ce-3.8.1
 
-COPY Ahmad-mule-ci-1.0.0-SNAPSHOT.zip /root/mule/apps
+#COPY Ahmad-mule-ci-1.0.0-SNAPSHOT.zip /root/mule/apps
 
 EXPOSE 8081
