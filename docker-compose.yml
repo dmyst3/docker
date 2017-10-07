@@ -1,6 +1,7 @@
 version: '3'
 services:
   api1:
+    container_name: api1
     image: "abacchus/ce-3.8.1"
     build: ./mule
     networks:
@@ -12,6 +13,7 @@ services:
      - dev.properties
     
   api2:
+    container_name: api2
     image: "abacchus/ce-3.8.1"
     build: ./mule
     networks:
@@ -23,6 +25,7 @@ services:
      - dev.properties
 
   nginx:
+    container_name: nginx
     image: "nginx:mule"
     build: ./nginx
     networks:
