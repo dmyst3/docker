@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+    environment{
+        t = "hello"
+    }
+
+    stages{
+        stage("test"){
+            steps{
+                println t
+            }
+        }
+    }
+}
