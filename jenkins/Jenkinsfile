@@ -9,6 +9,7 @@ pipeline {
             steps{
                 echo "${t}"
                 echo "${JOB_NAME}"
+                echo "${STAGE_NAME}"
             }
         }
     }
