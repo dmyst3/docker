@@ -37,7 +37,7 @@ pipeline{
                     bat "docker tag apache:${env.myVer} abacchus/apache:${env.myVer}"
                     
                     //Login to docker hub
-                    bat 'docker login --username abacchus --password myst3008'
+                    bat 'docker login --username abacchus --password XXxxxxxx'
                     
                     //Push image to docker hub
                     bat "docker push abacchus/apache:${env.myVer}"
