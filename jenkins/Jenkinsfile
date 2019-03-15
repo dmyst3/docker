@@ -10,7 +10,7 @@ pipeline {
                 echo "${t}"
                 echo "${JOB_NAME}"
                 echo "${STAGE_NAME}"
-                echo "sh whoami"
+                sh "whoami"
             }
         }
     }
