@@ -10,7 +10,8 @@ pipeline {
                 echo "${t}"
                 echo "${JOB_NAME}"
                 echo "${STAGE_NAME}"
-                sh "docker info"
+                //sh "docker info"
+                echo "what's up preetam?"
             }
         }
     }
